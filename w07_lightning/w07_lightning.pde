@@ -1,7 +1,7 @@
 void drawLightning (int x, int y, int numParts) {
   while (numParts > 0) {
     int nextx = int (random (x-5, x+5));
-    int nexty = height/numParts;
+    int nexty = y + height/numParts;
     stroke (#FFFF00);
     strokeWeight (7);
     line (x, y, nextx, nexty);
