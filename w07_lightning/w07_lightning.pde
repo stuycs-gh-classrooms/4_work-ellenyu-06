@@ -15,7 +15,7 @@ void setup () {
   background (0);
   int lightning = 5;
   while (lightning > 0) {
-    drawLightning (int (random (width)), int (random (height)), int (random (100)));
+    drawLightning (int (random (width)), int (random (height)), int (random (10, 100)));
     lightning = lightning-1;
   }
 }
