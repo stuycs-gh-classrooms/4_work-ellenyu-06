@@ -1,4 +1,4 @@
 # Work For NeXT CS
 ### Name: ellen yu
-### Class Period:
+### Class Period: 4
 ---
