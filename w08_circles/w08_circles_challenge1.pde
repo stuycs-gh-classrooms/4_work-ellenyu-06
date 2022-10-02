@@ -10,21 +10,20 @@ void setup () {
   draw ();
 }
 
-void circleRow (int startX, int endX, int startY, int endY, int d) {
+void circleGrid (int startX, int endX, int startY, int endY, int d) {
   fill (#8F0000);
   for (int x = startX; x <= endX; x = x + d) {
-    circle (x, startY, d);
     while (startY <= endY) {
-      startY = startY + d;
       circle (x, startY, d);
+      startY = startY + d;
     }
-    startY= radius;
+    startY = radius;
   }
 }
 
 void draw () {
   background (#d3b994);
-  circleRow (radius, radius * 9, radius, radius*9, 2 * radius);
+  circleGrid (radius, radius * 9, radius, radius*9, 2 * radius);
   if (movingX < width - radius) {
     fill (#b35a20);
     circle (movingX, movingY, 2 * radius);
