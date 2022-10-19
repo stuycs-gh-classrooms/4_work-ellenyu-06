@@ -1,0 +1,27 @@
+int dotDiameter = 5;
+int cosAmp, rx, ry, angle;
+
+void setup () {
+  size (500,500);
+  background (0);
+  cosAmp = 5;
+  angle = 0;
+  rx = width/2;
+  ry = height/2;
+  stroke (255);
+}
+void draw () {
+  roseCurve(angle, cosAmp, rx, ry);
+  angle++;
+}
+void roseCurve (int degrees, int r, int x, float y) {
+  y = r * cos (cosAmp *(radians (degrees)));
+  r ++;
+  if (x < width) {
+    rx++;
+  }
+  else { 
+    rx = width/2;
+  }
+  circle (rx, y + ry, dotDiameter);
+}
