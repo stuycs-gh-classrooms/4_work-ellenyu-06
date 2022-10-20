@@ -1,4 +1,4 @@
-float angle, xOffset, yOffset;
+float angle, spiralAngle, xOffset, yOffset;
 int dotDiameter;
 int sinAmplitude;
 int circRadius;
@@ -16,6 +16,7 @@ void setup() {
   spiralRadius = 100;
   petalRadius = 100;
   angle = 0;
+  spiralAngle = 0;
   stroke(20);
 }//setup
 
@@ -23,6 +24,7 @@ void draw() {
   changeColor();
   drawPattern(angle, petalRadius, sinAmplitude*3, circRadius*3);
   otherGraph (angle, sinAmplitude, xOffset, yOffset);
+  drawSpiral(xOffset, yOffset, angle);
   angle += 0.05;
 }
 
@@ -46,4 +48,13 @@ void otherGraph (float degrees, int r, float x, float y) {
   y = r * sin (sinAmplitude *(radians (degrees)))* sin(radians(degrees));
   x = r * cos(radians(degrees)) * cos (sinAmplitude * (radians (degrees)));
   circle (x+xOffset, y + yOffset, dotDiameter);
+}
+
+void drawSpiral(float xOffset, float yOffset, float radius) {
+  xOffset=width/2;
+  yOffset=height/2;
+  float xSpiral=xOffset+radius*cos(radians(spiralAngle/3));
+  float ySpiral=yOffset+radius*sin(radians(spiralAngle/3));
+  circle(xSpiral,ySpiral,dotDiameter);
+  spiralAngle++;
 }
