@@ -15,7 +15,7 @@ void setup() {
 
 void draw() {
   background(0);
-  if(circleY < height/2) {
+  if (circleY < height/2) {
    fill(0, 0, 255);
   }
   else {
@@ -24,13 +24,13 @@ void draw() {
   
   rectCross(10);
   movingCircle(width/2, circleY, circleRadius*2);
-  if(circleY + circleRadius == height) {
+  if (circleY + circleRadius == height) {
     changeDirection = true;
     }
-  if(circleY - circleRadius == 0) {
+  if (circleY - circleRadius == 0) {
     changeDirection = false;
   }
-  if(changeDirection == true) {
+  if (changeDirection == true) {
    circleY--;
   }
   else {
@@ -39,7 +39,7 @@ void draw() {
 }
 
 void rectCross(int numRects) {
-  while(x <= width) {
+  while (x <= width) {
     rect(x, y, width/numRects, height/numRects);
     rect(x - width/numRects, height - y, width/numRects, height/numRects);
     x += width/numRects;
@@ -52,5 +52,5 @@ void rectCross(int numRects) {
 }
 
 void movingCircle(int circleX, int circleY, int circleDiameter) {
-  circle(circleX, circleY, circleDiameter);
+  circle (circleX, circleY, circleDiameter);
 }
