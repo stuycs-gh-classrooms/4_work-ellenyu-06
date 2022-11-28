@@ -17,7 +17,7 @@ void draw() {
   background(0);
   for (int i=0; i<balls.length; i++) {
     balls[i].c = SAFE_COLOR;
-    for (int j=0; j<balls.length-1; j++) {
+    for (int j=0; j<balls.length; j++) {
       if ((balls[i].collisionCheck(balls[j])) == true) {
         balls[i].c = COLLISION_COLOR;
       }
